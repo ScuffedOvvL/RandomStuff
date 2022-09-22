@@ -137,3 +137,5 @@ def generate_proven(bits):
     while (proven := rand_odd(bits)) and not mr_deterministic(proven) and not proven.bit_length() > 82:
         continue
     return proven if proven < LIMIT else None
+
+

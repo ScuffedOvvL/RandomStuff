@@ -7,6 +7,12 @@ Deterministic version up to a value of 3,317,044,064,679,887,385,961,980
 NOTE: This library should NEVER be used for any cryptographic purposes!
 """
 from random import randint
+# For version 3.10.7 and above (for rand_odd and rand_even functions)
+try:
+    from sys import set_int_max_str_digits
+    set_int_max_str_digits(0)
+except ImportError:
+    pass
 
 
 LIMIT = 3317044064679887385961980

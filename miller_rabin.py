@@ -1,6 +1,6 @@
 """
 Implementation of the Miller-Selfridge-Rabin primality test
-Standard error probability is 2 ^ -100 (50 rounds)
+Max error probability is 2 ^ -100 (50 rounds)
 Trial division test with primes below 2000
 Deterministic version up to a value of 3,317,044,064,679,887,385,961,980
 

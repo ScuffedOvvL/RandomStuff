@@ -38,14 +38,12 @@ def divisible(a, b):
     return not a % b
 
 
-# Function that generates random odd numbers
 def rand_odd(bits):
     while (num := randint(2**(bits-1), (2**bits)-1)) and divisible(num, 2):
         continue
     return num
 
 
-# Function that generates random even numbers
 def rand_even(bits):
     while (num := randint(2**(bits-1), (2**bits)-1)) and not divisible(num, 2):
         continue
@@ -54,9 +52,7 @@ def rand_even(bits):
 
 # Fermat prp test to rule out most of the composite numbers
 def fermat_prp(b, n):
-    if pow(b, n-1, n) == 1:
-        return True
-    return False
+    return True if pow(b, n-1, n) == 1 else False
 
 
 def trial_division(n):
@@ -142,14 +138,12 @@ def mrdt_sieve(n):
     return primes
 
 
-# Uses miller_rabin function to generate probable primes
 def generate_probable(bits, rounds=50):
     while (probable := rand_odd(bits)) and not miller_rabin(probable, rounds):
         continue
     return probable
 
 
-# Uses deterministic version to generate proven primes
 def generate_proven(bits):
     while (proven := rand_odd(bits)) and not mr_deterministic(proven) and not proven.bit_length() > 82:
         continue

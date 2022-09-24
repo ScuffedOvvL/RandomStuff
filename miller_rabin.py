@@ -52,7 +52,7 @@ def rand_even(bits):
 
 # Fermat prp test to rule out most of the composite numbers
 def fermat_prp(b, n):
-    return True if pow(b, n-1, n) == 1 else False
+    return pow(b, n-1, n) == 1
 
 
 def trial_division(n):

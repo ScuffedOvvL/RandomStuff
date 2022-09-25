@@ -9,7 +9,7 @@ def binary(d):
             b += "1"
         else:
             b += "0"
-            d //= 2
+        d //= 2
     return b[::-1]
 	
 

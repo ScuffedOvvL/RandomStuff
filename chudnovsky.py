@@ -1,6 +1,4 @@
 # Implementation of the Chudnovsky algorithm to calculate decimal digits of pi
-
-
 from decimal import Decimal, getcontext
 from math import factorial, sqrt
 

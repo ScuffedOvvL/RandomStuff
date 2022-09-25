@@ -27,7 +27,7 @@ def exp(x, y, n=None):
     y = binary(y)
 
     for i in range(len(y)-1):
-        r = (r * r) if n == None else (r * r) % n
+        r = (r * r) if n is None else (r * r) % n
         if y[i+1] == "1":
-            r = (r * x) if n == None else (r * x) % n
+            r = (r * x) if n is None else (r * x) % n
     return r

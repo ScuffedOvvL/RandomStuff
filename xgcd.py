@@ -43,4 +43,4 @@ def legendre_symbol(a, p):
         return 1
     if pow(a, p//2, p) == p-1:
         return -1
-    return pow(a, p//2, p)
+    return

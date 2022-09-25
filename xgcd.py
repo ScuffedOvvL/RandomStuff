@@ -4,8 +4,8 @@
 def gcd(a, b):
     r = a % b
     while r != 0:
-	a, b = b, r
-	r = a % b
+	    a, b = b, r
+	    r = a % b
     return b
 
 
@@ -23,13 +23,13 @@ def xgcd(a, b):
 		
 		
 def mod_inverse(a, b):
-	g, s, t = xgcd(a, b)
-	if g != 1:
-		return None
-	return s % b
+    g, s, t = xgcd(a, b)
+    if g != 1:
+        return None
+    return s % b
 
 
 def lcm(a, b):
-	return a * b // gcd(a, b)
+    return a * b // gcd(a, b)
 	
 	

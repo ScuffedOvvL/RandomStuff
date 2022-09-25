@@ -24,7 +24,7 @@ def decimal(b):
 
 def exp(x, y, n=None):
     r = x
-    y = bin(y)[2:]
+    y = binary(y)
 
     for i in range(len(y)-1):
         r = (r * r) if n == None else (r * r) % n

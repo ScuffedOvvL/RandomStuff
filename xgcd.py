@@ -32,15 +32,3 @@ def mod_inverse(a, b):
 def lcm(a, b):
     return a * b // gcd(a, b)
 	
-
-# Calculate legendre symbol using Euler's criterion
-def legendre_symbol(a, p):
-    if p % 2 == 0:
-        return None
-    if gcd(a, p) != 1:
-        return 0
-    if pow(a, p//2, p) == 1:
-        return 1
-    if pow(a, p//2, p) == p-1:
-        return -1
-    return pow(a, p//2, p)

@@ -110,9 +110,6 @@ def miller_rabin(n, rounds=50):
 def mr_deterministic(n):
     if n == 2 or n == 3:
         return True
-
-    if not trial_division(n):
-        return False
         
     if n < 2047:
         if not sprp(2, n):
@@ -131,11 +128,7 @@ def mr_deterministic(n):
 def mrdt_sieve(n):
     if n > LIMIT:
         return None
-    primes = []
-    for x in range(2, n):
-        if mr_deterministic(x):
-            primes.append(x)
-    return primes
+    return [prime for prime in range(2, n) if mr_deterministic(prime)]
 
 
 def generate_probable(bits, rounds=50):

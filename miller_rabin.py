@@ -128,7 +128,7 @@ def is_prime(n):
 def mrdt_sieve(n):
     if n > LIMIT:
         return None
-    return [prime for prime in range(2, n) if is_prime(prime)]
+    return [num for num in range(2, n) if is_prime(num)]
 
 
 def generate_probable(bits, rounds=50):

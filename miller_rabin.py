@@ -107,7 +107,7 @@ def miller_rabin(n, rounds=50):
     
 
 # Deterministic version up to a specific limit
-def mr_deterministic(n):
+def is_prime(n):
     if n == 2 or n == 3:
         return True
         
@@ -128,7 +128,7 @@ def mr_deterministic(n):
 def mrdt_sieve(n):
     if n > LIMIT:
         return None
-    return [prime for prime in range(2, n) if mr_deterministic(prime)]
+    return [prime for prime in range(2, n) if is_prime(prime)]
 
 
 def generate_probable(bits, rounds=50):
@@ -138,6 +138,6 @@ def generate_probable(bits, rounds=50):
 
 
 def generate_proven(bits):
-    while (proven := rand_odd(bits)) and not mr_deterministic(proven) and not proven.bit_length() > 82:
+    while (proven := rand_odd(bits)) and not is_prime(proven) and not proven.bit_length() > 82:
         continue
     return proven if proven < LIMIT else None

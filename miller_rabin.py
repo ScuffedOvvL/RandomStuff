@@ -125,10 +125,11 @@ def is_prime(n):
     
 
 # Prime sieve that uses the deterministic version
-def mrdt_sieve(n):
+def sieve(n):
     if n > LIMIT:
         return None
-    return [num for num in range(2, n) if is_prime(num)]
+    primes = [num for num in range(2, n) if is_prime(num)]
+    return primes
 
 
 def generate_probable(bits, rounds=50):

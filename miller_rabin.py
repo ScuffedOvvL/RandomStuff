@@ -110,7 +110,10 @@ def miller_rabin(n, rounds=50):
 def is_prime(n):
     if n == 2 or n == 3:
         return True
-        
+    
+    if n < 2:
+	return False
+	
     if n < 2047:
         if not sprp(2, n):
             return False

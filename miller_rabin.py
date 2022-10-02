@@ -112,7 +112,7 @@ def is_prime(n):
         return True
     
     if n < 2:
-	return False
+        return False
 	
     if n < 2047:
         if not sprp(2, n):
